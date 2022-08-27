@@ -1,16 +1,19 @@
 provider "aws" {
-  profile    = "terraform_ci_test"
-  region     = "sa-east-1"
+  region  = "us-east-1"
 }
+
 resource "aws_s3_bucket" "bucket-backend" {
-    bucket = "bucket-backend-s3"
-    versioning {
-      enabled = true
-    }
-    lifecycle {
-      prevent_destroy = true
-    }
-    tags = {
-      Name = "backend-S3"
-    }      
+  bucket = "bucket-backend"
+}
+
+resource "aws_s3_bucket_acl" "s3_bucket_acl" {
+  bucket = aws_s3_bucket.bucket-backend.id
+  acl    = "private"
+}
+
+resource "aws_s3_bucket_versioning" "versioning_bucket" {
+  bucket = aws_s3_bucket.bucket-backend.id
+  versioning_configuration {
+    status = "Enabled"
+  }
 }

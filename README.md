@@ -27,6 +27,7 @@ resource "aws_s3_bucket" "bucket-backend" {
 - Altere os nomes das chaves, **Bucket** e **Profile**.
 
 	**Bucket** – Nome único para o seu bucket.
+	
 	**Profile** – Nome do profile criado no seu AWS-CLI.
 
 No diretório onde você criou o arquivo, use os comandos abaixo para criar o bucket na AWS:

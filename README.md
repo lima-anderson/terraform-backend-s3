@@ -54,7 +54,7 @@ terraform {
 
 - Alterar o nome do **Bucket**, a **Região** e principalmente a **Key** que indica como será a organização dos estados no bucket.
 
-No exemplo a **key** vai criar uma pasta chamada **project-name** dentro do seu bucket e o arquivo de estado será salvo dentro dela. Dessa forma você pode utilizar só um bucket e usa-lo como backend para vários projetos.
+No exemplo a **key** vai criar uma pasta chamada **project-name** dentro do bucket e o arquivo de estado será salvo dentro dela. Dessa forma você pode-se utilizar apenas um bucket e usa-lo como backend para vários projetos.
 
 ```shell
 terraform init

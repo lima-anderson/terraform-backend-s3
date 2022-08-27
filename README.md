@@ -37,7 +37,7 @@ terraform init
 terraform apply
 ```
 
-- Criar o arquivo **backend.tf ** no mesmo diretório onde recursos estão:
+- Criar o arquivo **backend.tf** no mesmo diretório onde recursos estão:
 
 ```javascript
 terraform {
@@ -62,7 +62,7 @@ terraform init
 ## Bloqueio de estados
 Ao usar o backend remoto os estados da infraestrutura podem ficar disponíveis para mais pessoas de uma equipe. Então, para evitar possíveis imprevistos no caso da realização de alterações na mesma infraestrutura simultaneamente vamos utilizar uma tabela do DinamoDB para bloquear nossos arquivos de estado.
 
-Essa etapa é bem simples, basta criar o arquivo **dinamodb-table.tf ** com o seguinte conteúdo:
+Basta criar o arquivo **dinamodb-table.tf** com o seguinte conteúdo:
 
 ```javascript
 resource "aws_dynamodb_table" "dynamodb-backend" {
